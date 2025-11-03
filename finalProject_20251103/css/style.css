@@ -1,0 +1,106 @@
+/*
+*{
+    border: solid red 1px;
+}
+*/
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #ffeeee;
+    padding: 5px;
+    margin: 10px;
+    font-size: 20px;
+    font-family:Arial, sans-serif;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.90em;
+}
+
+h2{
+    text-align:center;
+  }
+
+li{
+    margin-top: 20px;
+}
+
+.grid{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+    align-content: center;
+}
+.grid figure {
+    text-align: center;
+    overflow:hidden; /* Prevents overflow */
+    align-content: center;
+    border: solid red 1px;
+}
+
+.grid figure img {
+    border: 5px solid hsl(240, 88%, 27%);
+    border-radius: 35px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    display: block;
+    /*margin: 0 auto;*/
+}
+
+
+@media screen and (min-width: 772px){
+    .grid{
+        grid-template-columns: 1fr 1fr;
+    }
+    .grid figure img{
+        border-radius: 50%;
+    }
+    .grid figure:last-child{
+        grid-column: span 2;
+    }
+    
+}
+
+@media screen and (min-width: 992px){
+     .grid figure img{
+        border-radius:unset;
+    }
+    .grid figure:nth-child(3n){
+        grid-column: span 2;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    html{
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    .grid figure{
+        background-color:hsl(120, 81%, 16%);
+        color: hsl(60, 80%, 86%);
+        border:3px solid black;
+    }
+    .grid figure img{
+        border: solid black 5px;
+    }
+    body{
+        background-color: hsl(240, 56%, 11%);
+        color: hsl(60, 73%, 90%);
+    }
+    .grid figure a{
+        color: hsl(51, 94%, 68%)
+    }
+    .grid figure a:visited{
+        color: hsl(32, 96%, 52%);
+    }
+    .grid figure a:hover{
+        background-color: hsl(316, 82%, 64%);
+        color: #ffff00;
+    }
+}
